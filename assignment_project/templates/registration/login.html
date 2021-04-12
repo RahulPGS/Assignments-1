@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}{% block content %}
+<body>
+<div align="center"><h1 style="margin-top:1cm;"><a href="{% url 'main_page'%}" style="color:#0062cc;font-size:50px;font-family:globs"> Assignments</a></h1></div>
+
+<div class="container login-container" style="margin-top:2cm;font-family:grob">
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                    <h3>Login for Students</h3>
+                    <form method="post" align="center">
+                         <div class="form-group">
+                            {% csrf_token %}
+                            {% bootstrap_form form %}
+                              <p>Not yet registered?<a href="/stu_register"> Register here </a> </p>
+                            <button type="submit" class="btnSubmit">Login</button>
+                         </div>
+                    </form>
+                </div>
+                <div class="col-md-6 login-form-2">
+                    <h3>Login for Teachers</h3>
+                     <form method="post" align="center">
+                         <div class="form-group" style="color:white">
+                            {% csrf_token %}
+                            {% bootstrap_form form %}
+                            <p>Not yet registered?<a href="/admin"> Register here </a> </p>
+                            <button type="submit" class="btnSubmit">Login</button>
+                         </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</body>
+{% endblock %}

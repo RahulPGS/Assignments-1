@@ -1,0 +1,1 @@
+web: gunicorn Assignments.wsgi --log-file -

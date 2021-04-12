@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<body>
+    <div  style="background-color:#0062cc;color:white">
+		<h1 style="padding-left:50px;font-family:globs" ><a href="{% url 'main_page'%}" style="color:white"> Assignments</a>
+		<p style="font-family:grob;" class="title">{{ stu }}<a href="/logout" style="padding-left:10px;font-size:15px;color:orange">logout</a></p></h1><hr>
+    </div>
+        <span style="float:left;padding-left:20px"><button onclick="javascript:history.go(-1);" class="btn btn-primary">Back</button></span>
+   <div align="center">
+        <h2 style="color:red;font-family:grob"> Deleting {{ obj }} : {{name}}</h2>
+        <a href="{% url target %}"><button class="btn btn-success">Proceed</button></a>
+        <a href="{{cancel}}"><button class="btn btn-warning"> Cancel</button></a>
+   </div>
+</body>
+{% endblock %}

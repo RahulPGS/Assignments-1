@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full'%}
+{% block extrahead %}
+{% load static %}
+<script type="text/javascript" src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+{{ form.media }}
+{% endblock %}
+{% block content %}
+<body>
+    <div  style="background-color:#0062cc;color:white">
+		<h1 style="padding-left:50px;font-family:globs" ><a href="{% url 'main_page'%}" style="color:white"> Assignments</a>
+		<p style="font-family:grob;" class="title">{{ stu }}<a href="/logout" style="padding-left:10px;font-size:15px;color:orange">logout</a></p></h1><hr>
+    </div>
+    <span style="float:left;padding-left:20px"><button onclick="javascript:history.go(-1);" class="btn btn-primary">Back</button></span>
+     <div class="box" align="center" style="margin-bottom:1cm">
+           <form action="new_assignment" method="post" enctype="multipart/form-data">
+               {% csrf_token %}
+               {% bootstrap_form form %}
+               <br>
+               <button type="submit" name="True" class="btn btn-warning">Save and add questions</button>
+               <button type="submit" name="False" class="btn btn-primary">Save and exit</button>
+           </form>
+    </div>
+</body>
+{% endblock %}

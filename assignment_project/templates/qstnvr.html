@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load index %}
+{% block content %}
+<body>
+    <div  style="background-color:#0062cc;color:white">
+		<h1 style="padding-left:50px;font-family:globs" ><a href="{% url 'main_page'%}" style="color:white"> Assignments</a>
+		<p style="font-family:grob;" class="title">{{ stu }}<a href="/logout" style="padding-left:10px;font-size:15px;color:orange">logout</a></p></h1><hr>
+    </div>
+	<span style="float:left;padding-left:20px"><button onclick="javascript:history.go(-1);" class="btn btn-primary">Back</button></span>
+	<div align="center">
+		<h2 align="center" style="color:#0062cc;font-family:grob">{{an}}</h2>
+		<span style="float:right;padding-right:20px"><a href="/view_results"><button class="btn btn-warning">View results</button></a> </span>
+		<p> {{heading}} </p>
+		<p style="float:right;padding-right:20px;font-size:20px;margin-top:0.5cm">Duration : {{ duration }}</p>
+		<div style="padding-right:400px;padding-left:400px"><hr></div>
+		<div align="left">
+			{% for i in len %}
+			<div class="box" style="margin-bottom:1cm">
+				Question{{forloop.counter}}: {{ qst|index:i }}<br>
+				{% if img|index:i %}
+    				<img src="{{ img|index:i }}" height="200px" width="300px">
+				{% endif %}<br>
+				choices:<br>
+				{% for c in choices|index:i %}
+				<span style="padding-left:30px">{{forloop.counter}} . {{ c.choice }}</span><br>
+				{% endfor %}
+				Ans : {{ ans|index:i }}
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</body>
+{% endblock %}

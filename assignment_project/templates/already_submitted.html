@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<body>
+    <div>
+		<h1 style="padding-left:50px;font-family:globs" ><a href="{% url 'main_page'%}" style="color:#0062cc"> Assignments</a>
+        <p class="title gt">{{ stu }}<a href="/logout" style="padding-left:10px;font-size:15px;color:orange">logout</a></p></h1><hr>
+    </div>
+<h1 align="center" style="color:#0062cc;font-family:grob">{{error}}</h1>
+<p align="center">{{ heading }}</p>
+<p align="center">check your available assignments <a href="/assignments" align="center">here </a>, your results <a href="/results">here</a></p>
+</body>
+{% endblock %}}

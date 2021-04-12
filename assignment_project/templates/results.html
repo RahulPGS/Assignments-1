@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load index %}
+{% block content %}
+<body>
+    <div>
+		<h1 style="padding-left:50px;font-family:globs"><a href="{% url 'main_page'%}" style="color:#0062cc"> Assignments</a>
+        <p class="title" style="font-family:grob">{{ stu }}<a href="/logout" style="padding-left:10px;font-size:15px;color:orange">logout</a></p></h1><hr>
+    </div>
+    <span style="float:left;padding-left:20px"><button onclick="javascript:history.go(-1);" class="btn btn-primary">Back</button></span>
+    <div align="center" style="margin-bottom:1cm">
+        <h2 style="color:#0062cc;font-family:grob" align="center">Your results</h2>
+        {% for g in ga %}
+        <div class="box" align="left">
+            <a href="{% url 'view_r' g.assignment.pk %}"><button class="btn btn-warning">View response</button></a>
+            <span style="font-family:grob">{{ g.assignment.name }}</span> result: {{ g.grades }}% &nbsp&nbsp{{ g.sub_date }}
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+{% endblock %}

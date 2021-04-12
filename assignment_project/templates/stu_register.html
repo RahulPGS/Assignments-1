@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% block content %}
+<body>
+<div align="center" style="background-color:#0062cc"><h1><a href="{% url 'main_page'%}" style="margin-top:0.5cm;color:white;font-family:globs;"> Assignments</a></h1><hr></div>
+        <div class="box" align="center" style="margin-bottom:1cm">
+             <h2 align="center" style="color:#0062cc;font-family:grob">Student Registration form</h2>
+            <form  method="post">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <br>
+                <button type="submit" class="btn btn-success">Register</button>
+            </form>
+        </div>
+</body>
+{% endblock %}

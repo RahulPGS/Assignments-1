@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<body>
+    <div>
+		<h1 style="padding-left:50px;font-family:globs"><a href="{% url 'main_page'%}" style="color:#0062cc"> Assignments</a>
+        <p class="title" style="font-family:grob">{{ stu }}<a href="/logout" style="padding-left:10px;font-size:15px;color:orange">logout</a></p></h1><hr>
+    </div>
+<p align="center">You already completed this assignment</p>
+</body>
+{% endblock %}

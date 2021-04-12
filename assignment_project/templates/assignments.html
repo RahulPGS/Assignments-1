@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<body>
+    <div>
+		<h1 style="padding-left:50px;font-family:globs"><a href="{% url 'main_page'%}" style="color:#0062cc"> Assignments</a>
+        <p class="title" style="font-family:grob">{{ stu }}<a href="/logout" style="padding-left:10px;font-size:15px;color:orange">logout</a></p></h1><hr>
+    </div>
+    <div align="left">
+        <div align="center"> <a href="results"><button class="btnSubmit">view results</button> </a> </div><br>
+        {% for a in as %}
+            <h2 class="box"  style="margin-bottom:1cm"><a href="{% url 'qstn' a.pk%}"><button class="btn btn-primary">Take test</button></a>&nbsp{{ a.name }}<span style="float:right;padding-right:30px;font-size:15px">{{ a.pub_date }}</span></h2>
+        {% endfor %}
+        <h3 style="font-family:grob" align="center">Upcoming assignments</h3>
+        {% for t in tas %}
+            <h3 class="box" style="margin-bottom:1cm;color:#0062cc"><button class="btn btn-light">{{t.name}}</button><span style="font-size:20px;color:black">&nbsp on {{t.pub_date}}</span></h3>
+        {% endfor %}
+    </div>
+</body>
+{% endblock %}

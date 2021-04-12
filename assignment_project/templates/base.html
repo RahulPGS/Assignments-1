@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+    <link href="{% static 'fonts/Lobster/Lobster-Regular.ttf'%}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap-datetimepicker.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/gfont.css'%}" rel="stylesheet">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style>
+        .login-container{
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        .a:link{
+            text-decoration:none;
+            }
+        .login-form-1{
+            padding: 5%;
+            box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+        }
+        .login-form-1 h3{
+            text-align: center;
+            color: #333;
+        }
+        .login-form-2{
+            padding: 5%;
+            background: #0062cc;
+            box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+        }
+        .login-form-2 h3{
+            text-align: center;
+            color: #fff;
+        }
+        .login-container form{
+            padding: 10%;
+        }
+        .btnSubmit
+        {
+            width: 50%;
+            border-radius: 1rem;
+            padding: 1.5%;
+            border: none;
+            cursor: pointer;
+        }
+        .login-form-1 .btnSubmit{
+            font-weight: 600;
+            color: #fff;
+            background-color: #0062cc;
+        }
+        .login-form-2 .btnSubmit{
+            font-weight: 600;
+            color: #0062cc;
+            background-color: #fff;
+        }
+        .login-form-2 .ForgetPwd{
+            color: #fff;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .login-form-1 .ForgetPwd{
+            color: #0062cc;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .qstn{
+          background-color: #e6e6e6;
+          width: 700px;
+          border: 5px blue;
+          padding: 30px;
+          margin: 20px;
+          border-radius: 25px;
+         }
+        .box{
+          width: 700px;
+          border: 5px blue;
+          padding: 30px;
+          margin: 0px auto;
+          margin-top:1cm;
+          box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+          }
+
+        .title{
+         display:inline-block;
+         font-size:20px;
+         float:right;
+         padding-right:50px;
+         margin-top:0.5cm;
+        }
+        .gt{
+        font-family: 'Roboto Slab', serif;
+        }
+        .change:hover{
+            color:orange
+         }
+         img:hover{
+         transform:scale(2.7);
+         }
+    </style>
+    {% block extrahead %}{% endblock %}
+        <title>Assignments</title>
+    </head>
+<body>
+    {% block content %} {% endblock %}
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>-->
+</body>
+</html>
